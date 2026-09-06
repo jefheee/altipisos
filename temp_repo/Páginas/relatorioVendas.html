@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Imagens/favicon.png" />
+    <link rel="stylesheet" href="/Estilos/body.css">
+    <link rel="stylesheet" href="/Estilos/navbar.css">
+    <link rel="stylesheet" href="/Estilos/footer.css">
+    <link rel="stylesheet" href="/Estilos/relatorioVendas.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    </style>
+    <title>Altipisos - Possamai</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="https://www.altipisos.com.br/" target="_blank"><img src="/Imagens/logo.png" alt="Logo Altipisos"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/Páginas/cadastroVendas.html">Cadastro de venda</a></li>
+                <li><a href="/Páginas/relatorioVendas.html">Relatório de vendas</a></li>
+                <li><a href="/Páginas/estoque.html">Estoque</a></li>
+                <li><a href="/Páginas/relatorioEstoque.html">Relatório de estoque</a></li>
+                <li><a href="/Páginas/calculadoraPM.html">Calculadora P.M.</a></li>
+                <li><a href="/Páginas/index.html">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main></main>
+    <script src="/Scripts JS/mobile-navbar.js"></script>
+    <div id="container-pesq-vendas">
+        <h2>Faça sua pesquisa conforme os itens a baixo</h2>
+    
+        <div id="form-pesq-vendas">
+            <div id="rad-pesq">
+                <form>
+                <label for="altipisos" class="titulos-pesq-vendas">Altipisos</label>
+                <label for="possamai" class="titulos-pesq-vendas">Possamai</label><br>
+                <input type="radio" name="empresa" value="altipisos" checked>
+                <input type="radio" name="empresa" value="possamai"><br>
+            </div>
+            <div id="check-pesq">
+                <label for="vendedor" class="titulos-pesq-vendas">Vendedor</label><br>
+                <input type="checkbox" id="vendedor-senior" name="vendas1" value="vendedor">
+                <label for="vendas1">Vendedor Senior</label>
+                <input type="checkbox" id="parceiro-representante" name="vendas2" value="parceiro">
+                <label for="vendas2">Parceiro Representante</label>
+                <input type="checkbox" id="pre-vendedor" name="vendas3" value="pre-vendedor">
+                <label for="vendas3">Pré Vendedor</label><br>
+            </div>
+                <label for="empresa" class="titulos-pesq-vendas">Nome da Empresa Compradora</label><br>
+                <input type="text" name="empresa" placeholder="Digite o nome da pessoa física ou jurídica compradora" ><br>
+                <label for="contrato" class="titulos-pesq-vendas">Número do Contrato</label><br>
+                <input type="number" name="contrato" placeholder="Digite o nº do contrato" ><br>
+                <label for="endereco" class="titulos-pesq-vendas">Endereço</label><br>
+                <input type="text" name="endereço" placeholder="Digite o endereço de instalação" ><br>
+                <label for="data1" class="titulos-pesq-vendas">Data de Inicio</label>
+                <label for="data2" class="titulos-pesq-vendas">Data Final</label><br>    
+            <div id="data">                
+                <input type="date" name="data1" >
+                <input type="date" name="data2" ><br>
+            </div>    
+                </form>
+            <button id="botao" onclick="">Pesquisar</button>
+        </div>
+</body>
+<footer>
+    <p>Create By: R.A.Oliveira & Hiuhani Romano.</p>
+</footer>
+</html>

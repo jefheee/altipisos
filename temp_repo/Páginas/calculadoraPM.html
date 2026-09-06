@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="R. A. Oliveira">
+    <link rel="shortcut icon" href="/Imagens/favicon.png" />
+    <link rel="stylesheet" href="/Estilos/calculadoraPM.css">
+    <link rel="stylesheet" href="/Estilos/navbar.css">
+    <script type="text/javascript" src="/Scripts JS/calculadoraPM.js"></script> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    </style>
+    <title>Altipisos - Possamai</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="https://www.altipisos.com.br/" target="_blank"><img src="/Imagens/logo.png" alt="Logo Altipisos"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/Páginas/cadastroVendas.html">Cadastro de venda</a></li>
+                <li><a href="/Páginas/relatorioVendas.html">Relatório de vendas</a></li>
+                <li><a href="/Páginas/estoque.html">Estoque</a></li>
+                <li><a href="/Páginas/relatorioEstoque.html">Relatório de estoque</a></li>
+                <li><a href="/Páginas/calculadoraPM.html">Calculadora P.M.</a></li>
+                <li><a href="/Páginas/index.html">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main></main>
+    <script src="/Scripts JS/mobile-navbar.js"></script>
+    <div id="container">
+            <div id="mapa">
+            <h2>Clique em "Mais opções", ensira o endereço desejado e veja qual é a distância!</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d7070.090917026286!2d-48.688230472471474!3d-27.623108725363966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x9527357e9d54eaf1%3A0xb4c5f701b10f4a86!2sRua%20das%20Azal%C3%A9ias%20-%20Palho%C3%A7a%2C%20SC!3m2!1d-27.623118299999998!2d-48.6838531!4m0!5e0!3m2!1spt-BR!2sbr!4v1629466741384!5m2!1spt-BR!2sbr"
+                width="55%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div id="formulario">
+            <label for="km">Quantos kilometros de distância?</label><br>
+            <input type="text" name="km" placeholder="Digite o valor arredondado para cima, sem pontos e virgulas" id="km"><br>
+            <label for="metro">Quantos m² serão enviados?</label><br>
+            <input type="text" name="metro" placeholder="Digite o valor arredondado para cima, sem pontos e virgulas" id="metro"><br>
+        </div>
+        <div id="inOut">
+            <form>
+            <label for="out">Outdoor</label>
+            <label for="ind">Indoor</label><br>
+            <input type="radio" id="out" name="inout" value="out">
+            <input type="radio" id="ind" name="inout" value="ind"><br>
+            <label for="inst">Instalado</label>
+            <label for="for">Fornecido</label><br>
+            <input type="radio" id="inst" name="forinst" value="out">
+            <input type="radio" id="for" name="forinst" value="ind"><br>
+            </form>
+            <button id="botao" onclick="funcCalcular()">Calcular</button>
+            <span id="resultado">
+                <span id="fechar" onclick="funcFechar()">x</span>
+                <p id="precos"></p>
+            </span>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>Create by: R.A.Oliveira.</p>
+</footer>
+</html>

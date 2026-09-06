@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+#container-vendas {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    background: #0097d293;
+    text-align: center;
+}
+div#container-vendas {
+    margin-top: 4em;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 1em;
+}
+.titulos-vendas {
+    font-size: 2em;
+    margin: 2em;
+}
+
+#form-vendas input {
+    width: 50%;
+    height: 3em;
+    margin: 2em;
+    border-radius: 25px;
+    border: #0097d2 5px solid;
+    color: #0097d2;
+    padding: 0em 2em;
+    font-weight: bold;
+}
+form{
+    display: block;
+}
+#rad input{
+    display: inline;
+    width: 10%;
+    margin: 2em 5em;
+    height: 1em;
+}
+#check input{
+    display: inline;
+    width: 1em;
+    vertical-align: middle;
+    
+}
+button {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-bottom: 2em;
+    color: #0097d2;
+    border: #0097d2 5px solid;
+    padding: 0.5em 2em;
+    border-radius: 25px;
+    cursor: pointer;
+}
+textarea{
+    width: 50%;
+    height: 10em;
+    margin: 2em;
+    border-radius: 25px;
+    border: #0097d2 5px solid;
+    color: #0097d2;
+    padding: 0em 2em;
+    font-weight: bold;
+}

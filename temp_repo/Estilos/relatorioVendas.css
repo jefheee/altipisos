@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+#container-pesq-vendas {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    background: #0097d293;
+    text-align: center;
+}
+div#container-pesq-vendas {
+    margin-top: 4em;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 1em;
+}
+.titulos-pesq-vendas {
+    font-size: 2em;
+    margin: 2em;
+}
+
+#form-pesq-vendas input {
+    width: 50%;
+    height: 3em;
+    margin: 2em;
+    border-radius: 25px;
+    border: #0097d2 5px solid;
+    color: #0097d2;
+    padding: 0em 2em;
+    font-weight: bold;
+}
+
+#rad-pesq input{
+    display: inline;
+    width: 10%;
+    margin: 2em 5em;
+    height: 1em;
+}
+#check-pesq input{
+    display: inline;
+    width: 1em;
+    vertical-align: middle;   
+}
+#data input{
+    display: inline;
+    width: 21%;
+}
+button {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-bottom: 2em;
+    color: #0097d2;
+    border: #0097d2 5px solid;
+    padding: 0.5em 2em;
+    border-radius: 25px;
+    cursor: pointer;
+}
+

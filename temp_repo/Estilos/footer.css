@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+footer p{
+    display: block;
+    font-size: small;
+    font-style: italic;
+    position: absolute;
+    text-align: right;
+    padding: 1em;
+    width: 98vw;
+    height: 2em;
+    right: 10%;
+    color: #fff;
+}

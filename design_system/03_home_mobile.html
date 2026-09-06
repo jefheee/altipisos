@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#727785", "on-primary-container": "#f3f4ff", "on-primary": "#ffffff", "secondary-container": "#cce3f3", "surface-ice": "#F3F7FC", "primary-fixed-dim": "#afc6ff", "inverse-on-surface": "#f2f0f0", "surface-tint": "#0059c8", "surface-container-high": "#eae8e7", "inverse-primary": "#afc6ff", "surface-container": "#efeded", "court-clay": "#F97316", "primary-fixed": "#d9e2ff", "on-error": "#ffffff", "on-surface": "#1b1c1c", "surface-dim": "#dbd9d9", "tertiary-fixed": "#6ffbbe", "tertiary-fixed-dim": "#4edea3", "on-primary-fixed-variant": "#004299", "on-secondary": "#ffffff", "surface-variant": "#e4e2e2", "energy-green-light": "#E6F8F0", "tertiary": "#006444", "on-background": "#1b1c1c", "surface-bright": "#fbf9f8", "error-container": "#ffdad6", "outline-variant": "#c2c6d6", "on-tertiary": "#ffffff", "on-secondary-container": "#506573", "on-tertiary-fixed-variant": "#005236", "surface-container-low": "#f5f3f3", "surface": "#fbf9f8", "on-tertiary-fixed": "#002113", "primary-container": "#1b6ae3", "on-tertiary-container": "#d3ffe5", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "on-secondary-fixed": "#061e2a", "tertiary-container": "#008058", "on-surface-variant": "#424754", "secondary-fixed": "#cfe6f6", "secondary": "#4c616f", "surface-container-highest": "#e4e2e2", "primary": "#0052ba", "on-error-container": "#93000a", "secondary-fixed-dim": "#b3cada", "background": "#fbf9f8", "grid-line": "#E2E8F0", "inverse-surface": "#303030", "on-secondary-fixed-variant": "#344957", "on-primary-fixed": "#001944", "tech-cyan": "#00C2FF" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-desktop": "1.5rem", "space-3xl": "5rem", "grid-module": "0.25rem", "space-md": "1rem", "space-xl": "2rem", "gutter-mobile": "1rem", "space-2xl": "3rem", "space-sm": "0.75rem", "space-lg": "1.5rem", "space-xs": "0.5rem", "container-max": "80rem" }, "fontFamily": { "headline-xl-mobile": ["Outfit"], "headline-sm": ["Outfit"], "body-sm": ["Plus Jakarta Sans"], "display-hero": ["Outfit"], "label-caps": ["Outfit"], "headline-lg": ["Outfit"], "headline-xl": ["Outfit"], "body-lg": ["Plus Jakarta Sans"], "display-hero-mobile": ["Outfit"], "label-spec": ["Plus Jakarta Sans"], "headline-md": ["Outfit"], "body-md": ["Plus Jakarta Sans"] }, "fontSize": { "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-spec": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-space-md flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><button aria-label="Menu de navegação" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined">menu</span></button><div class="flex items-center gap-space-xs"><img alt="Image from https://altipisos.com.br/wp-content/uploads/2024/12/altipisos-novo-logo-branco.png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X_q_HEDTbFz16yaU8qjotHfyhXzZ0HBHL8mUHX3606fPIeNlwz8lme6NvD4W1jePKNVKSI3If2B4FNK2KBlvMj8Sb4yqdMdqK77iMEn_jREVZ2aNb4y5c_qn_QwoL9Apt-U7PtprhwGEu0F7BWotuXTY6JYr2u-Zr_T6hKfwrNN6OsOwv9zYdxoUP7kyfrfdSwhkIeCSITD79pHfqDfT-OnGi9_fPqQydA8_Azq_fjQ1jx9djqOnGCXfs"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">Altipisos</span></div></div><div class="flex items-center gap-space-xs"><a aria-label="Fale Conosco pelo WhatsApp" class="w-11 h-11 rounded-lg bg-tertiary-container text-on-tertiary flex items-center justify-center transition-all active:scale-95" href="https://wa.me/5500000000000"><span class="material-symbols-outlined">chat</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- Top Ambient Banner / Federation Live Pulse -->
+<section class="px-space-md pt-space-md pb-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+        Pioneira há +27 Anos
+      </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-energy-green-light text-tertiary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[14px]">eco</span>
+        100% Energia Verde
+      </span>
+</div>
+</section>
+<!-- Hero Section Mobile -->
+<section class="px-space-md pt-space-sm pb-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<h1 class="font-display-hero-mobile text-display-hero-mobile text-on-surface leading-tight">
+        Transforme seu espaço com <span class="text-primary tracking-tight">Altipisos</span>, a inovação em pisos modulares.
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant pt-1">
+        Mais de 27 anos de engenharia atlética de elite. Superfícies com absorção de impacto certificada, padrão oficial de federações e garantia estendida de 10 anos.
+      </p>
+</div>
+<!-- Dual Touch CTAs -->
+<div class="flex flex-col gap-space-xs w-full pt-1">
+<a class="w-full h-12 rounded-lg bg-primary text-on-primary font-label-caps text-label-caps uppercase flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98]" href="#produtos">
+<span>Conheça Nossos Produtos</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="w-full h-12 rounded-lg bg-surface-container text-primary font-label-caps text-label-caps uppercase flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98]" href="#orcamento">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span>Solicitar Orçamento</span>
+</a>
+</div>
+<!-- Hero Showcase Card with Floating Badge -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container-low shadow-sm mt-space-xs">
+<div class="relative w-full h-56">
+<img class="w-full h-full object-cover" data-alt="Modern indoor and outdoor sports court with vibrant blue and terracotta interlocking modular polypropylene tiles, crisp white basketball and futsal boundary lines under professional stadium LED lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg5GTmSENLM25ZcVt_g9vOW_HiP-PacDZrjc7tVc2JxaR-dfmP5C7-Eyp33pmQruS2a00x3r05GeBhNPgDdPgCt802dg1Fy7zEksonwN_PspqLcgzAugBF2NtBXWwG2yq2HVam3eo_x9_PlmE5jD6UPqGnI2AmQmhYSpfonlDXqNbK_X3rNW14VZ5B2D1hwLgzu3NSWcshlhxWOQetgH8C4s6dB_U47Io9KQyPLVHl_zGTd68FIoBJbw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+<!-- Top Floating Certification Pill -->
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-md px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[15px]">verified</span>
+<span class="font-label-caps text-label-caps text-on-surface text-[10px]">Chancela Oficial CBB • FPFS • LPF</span>
+</div>
+<!-- Bottom Metric Pill Overlay -->
+<div class="absolute bottom-3 left-3 right-3 bg-surface-container-lowest/95 backdrop-blur-md rounded-lg p-3 shadow-md flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">sports_score</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary font-bold leading-none">+1 Milhão m²</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate text-[12px]">Instalados em todo o território nacional</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3 Quick Pillars Bar -->
+<div class="grid grid-cols-3 gap-2 pt-space-xs">
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-primary text-[22px]">verified_user</span>
+<span class="font-label-spec text-label-spec text-on-surface leading-tight text-[11px]">10 Anos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[10px] leading-tight">Garantia total de fábrica</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-[22px]">recycling</span>
+<span class="font-label-spec text-label-spec text-on-surface leading-tight text-[11px]">100% Virgem</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[10px] leading-tight">Polipropileno UV-8 puro</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-tech-cyan text-[22px]">schedule</span>
+<span class="font-label-spec text-label-spec text-on-surface leading-tight text-[11px]">48 Horas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[10px] leading-tight">Instalação sem sujeira</span>
+</div>
+</div>
+</section>
+<!-- Impact Metrics 2x2 Grid -->
+<section class="px-space-md py-space-md bg-surface-container-low">
+<div class="flex flex-col gap-1 pb-space-sm text-center">
+<span class="font-label-caps text-label-caps text-primary uppercase">Métricas de Excelência</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Números que comprovam nossa liderança</h2>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between h-28">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-primary font-bold block leading-tight">27+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-none">Anos de Pioneirismo</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between h-28">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">stadium</span>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold block leading-tight">+3.500</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-none">Quadras Entregues</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between h-28">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">square_foot</span>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-primary font-bold block leading-tight">+1M m²</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-none">Superfície Instalada</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between h-28">
+<div class="w-8 h-8 rounded-lg bg-energy-green-light text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">solar_power</span>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-tertiary font-bold block leading-tight">100%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-none">Energia Sustentável</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfólio de Produtos Especializados -->
+<section class="px-space-md py-space-lg flex flex-col gap-space-md" id="produtos">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-primary uppercase">Engenharia Sob Medida</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Pisos Modulares de Alta Performance</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Soluções esportivas e recreativas desenhadas com amortecimento articular e máxima durabilidade.</p>
+</div>
+<!-- Product 1: Sport In -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative w-full h-44">
+<img class="w-full h-full object-cover" data-alt="High angle macro close-up of blue indoor modular sports court tile texture with smooth high-grip finish, official white painted futsal penalty box line in crisp natural indoor gym lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJl0QqPpQQbpyY23tAKLXhFkLyH-GwkUQ2kEVvSEFiXhSr_blo3znGRqZ-m1ZV7_rXnHZ3Vs2D6duKBZCbSRjrLBBIiS59pukLB95xTrL-f0Sy5s0lgTlanHhVnkp7vbcQEFiCKTRN2uMwZUltNpyhVpyOuKfNoQSe_7xo8Rt39Zd5y0YWcc_OWVl1kzjNs6vQbUYx1xhtwny4N6QTsx8u8Nj5a-AidpMnV4wHuCFdDmj0LNPJBzN6Qg"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-primary text-on-primary font-label-caps text-label-caps uppercase">Indoor Profissional</span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-surface/90 text-on-surface font-label-spec text-label-spec text-[11px]">Absorção &gt; 35%</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Sport In</h3>
+<span class="text-tertiary font-label-spec text-label-spec flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> 10 Anos Garantia
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Piso esportivo de superfície contínua lisa com microtextura de alta aderência. Perfeito para Futsal profissional, Handebol e Voleibol indoor com retorno elástico uniforme.
+        </p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Futsal Oficial</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Atrito Certificado</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Zero Ruído</span>
+</div>
+<a class="mt-space-xs w-full h-11 rounded-lg bg-primary text-on-primary font-label-caps text-label-caps uppercase flex items-center justify-center gap-2 active:scale-[0.98] transition-all" href="#orcamento">
+<span>Especificar Sport In</span>
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Product 2: Sport Out -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative w-full h-44">
+<img class="w-full h-full object-cover" data-alt="Outdoor perforated modular sports tile in terracotta orange and navy blue, showing rainwater draining immediately through the honeycomb grid structure under bright sunshine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5fNBm4UKcFH5p3pq4EN56CJpjP1F6OKpnFDg7_P-h4LvhYW2_r6POktX4TtTR9Oob5Ck9_SFHHhyK1VdMhUOYlFBtJYl-eRy0zJkJk-bFPhq92iB0oaKl_y61wiDauM5NKprzovA3iJ9mxm2xERWmlKcEgIjcdzRhzrvCzNCM5rAPVoOUHUx1WtDApwoD8bw-_Bw0FjCivCGggp8z9Abf1nmWig7eZhAUZpi7MIS0gRjmSGHna3SwWQ"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-court-clay text-on-primary font-label-caps text-label-caps uppercase">Outdoor Autodrenante</span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-surface/90 text-on-surface font-label-spec text-label-spec text-[11px]">Secagem Rápida</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Sport Out</h3>
+<span class="text-court-clay font-label-spec text-label-spec flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">water_drop</span> Drenagem 100%
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Tecnologia autodrenante em grade honeycomb. Não acumula poças após fortes chuvas, possui tratamento anti-UV nível 8 e superfície antirreflexo para quadras abertas e Basquete 3x3.
+        </p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Basquete 3x3</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Pickleball &amp; Tênis</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Resistente a Chuva</span>
+</div>
+<a class="mt-space-xs w-full h-11 rounded-lg bg-court-clay text-on-primary font-label-caps text-label-caps uppercase flex items-center justify-center gap-2 active:scale-[0.98] transition-all" href="#orcamento">
+<span>Especificar Sport Out</span>
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Product 3: Play Soft -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative w-full h-44">
+<img class="w-full h-full object-cover" data-alt="Colorful bright playground play area with soft geometric interlocking puzzle rubberized tiles in yellow, sky blue, and grass green with children playing safely in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfaZRgfGZwpOsMJ5iShTm1ZclyTFP4t2_5C5a0-RVI0m1MWlg6Fs60jXIhSwNpEAsmzCu5aPgCy6qtimP-Tgrcp4oOBeQpNV8mhgUDXAdKXqeEO5YyQkip8IAmBvVDWLsXR1tmha3MCyOEpTeuLyymS3dkhL5uTQsk-Z5LvAfWsw0mm4RzA_3ZfBNP5LM3DW3Ng6R_a1jbQ20cKdlGhpQ8TEOzNp8PAguzGyNm0TJWQVDrRfg1SE5bXQ"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-tertiary text-on-primary font-label-caps text-label-caps uppercase">Playground Seguro</span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-surface/90 text-on-surface font-label-spec text-label-spec text-[11px]">NBR 16071</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Play Soft</h3>
+<span class="text-tertiary font-label-spec text-label-spec flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">shield</span> Amortecimento NBR
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Projetado para áreas recreativas de condomínios e escolas. Atende aos critérios de altura crítica de queda segundo a norma NBR 16071, 100% atérmico e atóxico.
+        </p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">25+ Cores Vivas</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Antiderrapante</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Antialérgico</span>
+</div>
+<a class="mt-space-xs w-full h-11 rounded-lg bg-tertiary text-on-primary font-label-caps text-label-caps uppercase flex items-center justify-center gap-2 active:scale-[0.98] transition-all" href="#orcamento">
+<span>Especificar Play Soft</span>
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<!-- Product 4: Toy Floor -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative w-full h-44">
+<img class="w-full h-full object-cover" data-alt="Preschool kindergarten playroom interior featuring multi-colored snap-lock modular floor tiles arranged in fun playful patterns with educational toys and soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpF8H8sp0TDFIjCyS8-0lzm03fE78oXy5tJnsqQTmthk6zKtoE5Xi5jId9PFHUBR1Xz1fSOlAlmGa2ZKZNZKUOWnaDJyZ6hD1hW1NPMCvhOexIbxxrc-UkxBHnSIegAokCbJ495Zgr76ur21lIckdVVcTOUJfnf_LZEqhfUQ17VboCmVl5lSAPmESaC2HuNLO-mQVePdeJB5bvBLijj0J3abpMiSvJuiWEpjN5G17K0k30PPBDgQ19lQ"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-secondary text-on-primary font-label-caps text-label-caps uppercase">Educativo &amp; Infantil</span>
+<span class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-surface/90 text-on-surface font-label-spec text-label-spec text-[11px]">Portátil</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Toy Floor</h3>
+<span class="text-secondary font-label-spec text-label-spec flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span> Estimula Cognição
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Piso modular lúdico para brinquedotecas, creches e eventos itinerantes. Montagem rápida, 100% lavável e com encaixe suave que não machuca os joelhos das crianças.
+        </p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Encaixe Fácil</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Fácil Higienização</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-spec text-label-spec text-on-surface-variant text-[11px]">Isolamento Térmico</span>
+</div>
+<a class="mt-space-xs w-full h-11 rounded-lg bg-secondary text-on-primary font-label-caps text-label-caps uppercase flex items-center justify-center gap-2 active:scale-[0.98] transition-all" href="#orcamento">
+<span>Especificar Toy Floor</span>
+<span class="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Engenharia & Diferenciais Tecnológicos -->
+<section class="px-space-md py-space-lg bg-surface-container-low">
+<div class="flex flex-col gap-1 pb-space-md">
+<span class="font-label-caps text-label-caps text-primary uppercase">Engenharia de Ponta</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Por que as maiores referências esportivas escolhem nossa tecnologia?</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Desenvolvido com precisão milimétrica para suportar sol abrasador, tempestades e partidas intensas sem deformações.</p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Diff 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-lg bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">science</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">100% Polipropileno Virgem</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Composto nobre com proteção UV Grau 8. Não resseca, não descasca e resiste a cargas pontuais superiores a 1.200 kg sem trincas.
+          </p>
+</div>
+</div>
+<!-- Diff 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-lg bg-energy-green-light text-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">timer</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Pronto para Uso em 48 Horas</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Sistema Snap-Fit Click de travamento patenteado. Montagem limpa sobre piso já existente, sem interdição prolongada do seu espaço esportivo.
+          </p>
+</div>
+</div>
+<!-- Diff 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">sports_soccer</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Padrão Esportivo Oficial</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Coeficiente de atrito padronizado e 98% de retorno de energia da bola para Futsal, Basquete 3x3, Pickleball, Vôlei e Tênis federado.
+          </p>
+</div>
+</div>
+<!-- Diff 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-lg bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">construction</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Solução Completa: Pisos + Equipamentos</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Entregamos a quadra completa: traves com redes profissionais, tabelas hidráulicas em acrílico, postes de voleibol e redes com catraca.
+          </p>
+</div>
+</div>
+<!-- Diff 5 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">build_circle</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Manutenção Quase Zero</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Sem necessidade de repinturas anuais caras ou impermeabilização recorrente. Substituição individual de módulos em minutos em caso de danos.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Homologações & Chancelas Oficiais -->
+<section class="py-space-md flex flex-col gap-space-sm">
+<div class="px-space-md flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Conformidade e Credibilidade</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Homologações Oficiais</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+</div>
+<!-- Scroll horizontal suave para logos de federação -->
+<div class="flex gap-space-xs overflow-x-auto px-space-md pb-2 pt-1 no-scrollbar">
+<div class="flex-shrink-0 px-4 py-3 bg-surface-container-lowest rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-primary-fixed text-primary flex items-center justify-center font-bold text-[14px]">CBB</div>
+<div class="flex flex-col">
+<span class="font-label-spec text-label-spec text-on-surface text-[12px] leading-tight">Basquete Brasil</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[10px]">Chancela Oficial</span>
+</div>
+</div>
+<div class="flex-shrink-0 px-4 py-3 bg-surface-container-lowest rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-court-clay text-on-primary flex items-center justify-center font-bold text-[14px]">3x3</div>
+<div class="flex flex-col">
+<span class="font-label-spec text-label-spec text-on-surface text-[12px] leading-tight">FIBA 3x3 Spec</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[10px]">Padrão Internacional</span>
+</div>
+</div>
+<div class="flex-shrink-0 px-4 py-3 bg-surface-container-lowest rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-[13px]">FPFS</div>
+<div class="flex flex-col">
+<span class="font-label-spec text-label-spec text-on-surface text-[12px] leading-tight">Paulista Futsal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[10px]">Piso Homologado</span>
+</div>
+</div>
+<div class="flex-shrink-0 px-4 py-3 bg-surface-container-lowest rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-tertiary text-on-primary flex items-center justify-center font-bold text-[13px]">LPF</div>
+<div class="flex flex-col">
+<span class="font-label-spec text-label-spec text-on-surface text-[12px] leading-tight">Liga Paulista</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[10px]">Piso Oficial</span>
+</div>
+</div>
+<div class="flex-shrink-0 px-4 py-3 bg-surface-container-lowest rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-secondary text-on-primary flex items-center justify-center font-bold text-[13px]">FCFS</div>
+<div class="flex flex-col">
+<span class="font-label-spec text-label-spec text-on-surface text-[12px] leading-tight">Federação Catarinense</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[10px]">Qualidade Aprovada</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Embaixadores e Testados pelas Lendas do Esporte -->
+<section class="px-space-md py-space-md bg-surface-ice">
+<div class="flex flex-col gap-1 pb-space-sm text-center">
+<span class="font-label-caps text-label-caps text-primary uppercase">Quem Joga Aprova</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Testado e Recomendado pelas Lendas</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Atletas de renome mundial confiam na precisão, amortecimento e estabilidade da Altipisos.</p>
+</div>
+<!-- Depoimentos Carrossel / Cards -->
+<div class="flex flex-col gap-space-sm">
+<!-- Falcão -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up portrait photo of Falcao, legendary Brazilian futsal king with confident smile wearing blue athletic sports jersey in bright professional sports studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOGu-BREM4-C9mAqqdeTruThGIc8IrDcvi90eouCmcQNjVQcyTjTbf_zp56uSMInbgGU_iwmSV-6u_HgIJYzYMrA_10kJbrtVhI_Xrm8eedDhs8MOCZJ6orRQ3N400sDcLwtE7WqF0VtPldskQUf2z_bMkkvLI9yZGFcM4jvOZoX7CDRPXZCHQKWr0sggsi7MncKLC-HQINdaqIY3hRU7D9SujE6ZXu_CnLlYowSE9GLagvFujrr3azg"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Falcão 12</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-spec text-label-spec text-court-clay text-[12px]">O Rei do Futsal • Maior Artilheiro</span>
+<div class="flex text-amber-500 pt-0.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic pt-1">
+          "O bom é saber que as novas gerações poderão jogar em um piso de qualidade máxima que preserva as articulações e entrega a velocidade real do futsal."
+        </p>
+</div>
+<!-- Amandinha -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Amandinha, 8 times best female futsal player in the world smiling proudly with intense athletic gaze holding a soccer ball." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx2z2Qrk3ru7lbCb3a0gejOOv0OqusxtzZzcxx9iywOHjAMRJZvcvxuJk68S-6foQ6PG35MCwzd55D4V6I8UhVJlxAldt-j1Hld_ogASq2yFVa1aosv5r8gyGQ7n40Nuo2ShdOu1-MArjW7ovY65pAwNogtt7uwPn8eiujapSPQXfPhH4PbmKJfzomL7j6hRuk5TCUpb1qf1_D-whVVJb45ET5fz0BjMo8SJgHEXsUDgixPY6vZR_N3w"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Amandinha</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-spec text-label-spec text-tertiary text-[12px]">8x Melhor Jogadora do Mundo</span>
+<div class="flex text-amber-500 pt-0.5">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic pt-1">
+          "A qualidade, segurança e tecnologia que a Altipisos proporciona é surreal. Dá total confiança para driblar e acelerar sem medo de escorregar ou lesionar."
+        </p>
+</div>
+<!-- Billy & Adonias Card Duplo Rápido -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col items-center text-center gap-1.5">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Headshot of Billy, popular Brazilian futsal content creator and athlete smiling with athletic wear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjmXm0-ibiX7XayXvrM8iuap3InfORI3xKltM8Q2PoTtXUhJR9v2IbbrtdoRN6EJB2-KQclg1DFsn8jmYcg4dUOtYztlpwC6Ylu06_CaIyVPdwbgzmy9eV6bpO_dRqdfkaHtpbbj1kW4G0UToD8j8pWnYDra_C07jaAl66suDN6-SmQsTMClLihcLCRluMRo9MLghdttYAmsfBrZCWDpvshlanWwxyZIxG7nt7Ggj_9qk4BKm9ZQZ1TA"/>
+</div>
+<span class="font-label-spec text-label-spec text-on-surface font-bold">Billy Futsal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Criador de Conteúdo e Craque das Quadras</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col items-center text-center gap-1.5">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Headshot of Adonias Fonseca, Brazilian freestyle football soccer champion performing a ball trick." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjj4Y-WRJkudIU_T4OPO0WFJ2d1DnnzCySw4_4G4Fym3Fzp9SVnX-9zLuLfog8uHUTa6f20FGMwFcOS9_9jp4FpWoz5zKHhWeM7y1bq1No7hNUx6Oqa-GxBLFPVGeN5uIP-rX9NGhFdKMQOb9f9WnttbsyfWmNEAgMR7xFNaCkfGPmQMOxJWkNCqOjG0PuzWSB0SK_so-KhQL_yj7gCqCTpqiaieYia6wY-Gaj7fnXady6okOVf3yhCg"/>
+</div>
+<span class="font-label-spec text-label-spec text-on-surface font-bold">Adonias Fonseca</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Campeão Mundial Freestyle &amp; Embaixador</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Técnico Altipisos -->
+<section class="px-space-md py-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Conteúdo &amp; Engenharia</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Artigos Técnicos</h2>
+</div>
+<a class="font-label-spec text-label-spec text-primary flex items-center gap-0.5" href="#">
+        Ver todos <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Post 1 -->
+<a class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex items-center gap-3 transition-transform active:scale-[0.99]" href="#">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Worker easily snapping modular interlocking floor tiles together without messy glue or tools during court installation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0SLdDHNbe2XeIMps51TtSO_EFl9PP_Ard5zi-AlfkaDqr1hlqjQeHb8Rdcjx8oJ6gG0bHH5oognykf4hI5MGBmbhzEwZzNcXKhduHMjmZ2birm4pn2PqfgAAgxPlERR9PBQX9dWdeIYAPT_HoK_TdXuUVPYYPLpMaI-cFT2AY8HMPqY9PJWtS3y-dkdGVCCX5j-0WJPV2pOBThe6YDD9xDqsb5yFDoQrRYp6Cwe0vUCQ_PR2S3PRYjQ"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-primary text-[10px] uppercase">Manutenção &amp; Custos</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[14px] leading-tight font-bold line-clamp-2">
+            Piso modular: menos manutenção e mais segurança para sua quadra
+          </h4>
+<span class="font-body-sm text-body-sm text-outline text-[11px] pt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span> 3 min de leitura
+          </span>
+</div>
+</a>
+<!-- Post 2 -->
+<a class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex items-center gap-3 transition-transform active:scale-[0.99]" href="#">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Comparison visual between old cracked painted concrete court and new vibrant cushioned modular interlocking sports tiles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCJXylSiM1EjhuBMTdZslwRzrDyOBv4w-cZvTx6c3DO8vvQc_wu0IQ68dPblrIjCmauwAN1rBZBMzAZ8995EE86v-TnRiWztcszt-6-fE_K8mPiVa9Jy6bxtSk06O11yaeU_2MTagA7ElaklKz8_UhMkmZxq2wwzEG-OKh9JtqsRFFC7p2YBvakFN4nsrgh83RS6dDEm3HhjsKNNfL_FXHgcSi4xl6EiD77tRFOZ5TMVb3FY3V6she2A"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-court-clay text-[10px] uppercase">Comparativo</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[14px] leading-tight font-bold line-clamp-2">
+            Por que a quadra de concreto pintada está ficando para trás?
+          </h4>
+<span class="font-body-sm text-body-sm text-outline text-[11px] pt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span> 4 min de leitura
+          </span>
+</div>
+</a>
+<!-- Post 3 -->
+<a class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex items-center gap-3 transition-transform active:scale-[0.99]" href="#">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Outdoor modular court immediately after heavy rain with water running through drainage channels while surface remains dry and safe for play." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ehsqUkqBThXR7TpDfqPMcuNrTY6898M2e_pnUGNr5oyqoEccBO39O3GUOEAqSTT0yO-FSkvoXSmO204kdjOSpIXgsXXIfOwT7suUSVrHNbMAjstWNAcYJefWlE06NBiPnGwq2aaqIVugyOfqZoT9Kan5-6KHXQrLktGxCpDxuX2V0_bE4DrZn1esdXRtoA0gOuBsfiXh3ZGk1njFbH-fRvko1ZLXk3eMB-pmAe9MCeEiJesyCYEpAA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-tertiary text-[10px] uppercase">Tecnologia Pluvial</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[14px] leading-tight font-bold line-clamp-2">
+            Piso modular drenante: segurança e diversão mesmo após a chuva
+          </h4>
+<span class="font-body-sm text-body-sm text-outline text-[11px] pt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span> 2 min de leitura
+          </span>
+</div>
+</a>
+</div>
+</section>
+<!-- Formulário de Orçamento Rápido Mobile -->
+<section class="px-space-md py-space-lg" id="orcamento">
+<div class="bg-primary text-on-primary rounded-2xl p-space-md shadow-xl flex flex-col gap-space-md relative overflow-hidden">
+<!-- Fundo decorativo sutil -->
+<div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-white/5 pointer-events-none"></div>
+<div class="flex flex-col gap-1 relative z-10">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/20 text-on-primary font-label-caps text-label-caps w-max">
+<span class="material-symbols-outlined text-[14px]">bolt</span> Atendimento Imediato
+        </span>
+<h2 class="font-headline-md text-headline-md text-on-primary font-bold">
+          Solicite um Projeto e Orçamento Personalizado
+        </h2>
+<p class="font-body-sm text-body-sm text-on-primary/80">
+          Receba uma simulação 3D, quantitativo exato de placas e assessoria técnica para o seu espaço esportivo.
+        </p>
+</div>
+<!-- Formulário Touch Otimizado -->
+<form class="flex flex-col gap-space-xs relative z-10" id="leadForm" onsubmit="event.preventDefault(); showSuccessFeedback();">
+<div class="flex flex-col gap-1">
+<label class="font-label-spec text-label-spec text-on-primary" for="nome">Nome Completo</label>
+<input class="w-full h-12 px-3 rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" id="nome" placeholder="Ex: Rodrigo Silva" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-spec text-label-spec text-on-primary" for="whatsapp">WhatsApp com DDD</label>
+<input class="w-full h-12 px-3 rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" id="whatsapp" placeholder="(00) 00000-0000" required="" type="tel"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-spec text-label-spec text-on-primary" for="email">E-mail Corporativo ou Pessoal</label>
+<input class="w-full h-12 px-3 rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" id="email" placeholder="rodrigo@empresa.com.br" required="" type="email"/>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="flex flex-col gap-1">
+<label class="font-label-spec text-label-spec text-on-primary" for="produto">Linha Desejada</label>
+<select class="w-full h-12 px-2.5 rounded-lg bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary-container" id="produto">
+<option value="sport-in">Sport In (Indoor)</option>
+<option value="sport-out">Sport Out (Outdoor)</option>
+<option value="play-soft">Play Soft (Playground)</option>
+<option value="toy-floor">Toy Floor (Infantil)</option>
+<option value="equipamentos">Pisos + Equipamentos</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-spec text-label-spec text-on-primary" for="area">Área Aprox. (m²)</label>
+<input class="w-full h-12 px-3 rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" id="area" placeholder="Ex: 400" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-spec text-label-spec text-on-primary" for="ambiente">Tipo de Local</label>
+<select class="w-full h-12 px-2.5 rounded-lg bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary-container" id="ambiente">
+<option value="condominio">Condomínio Residencial</option>
+<option value="clube">Clube Esportivo / Arena</option>
+<option value="colegio">Colégio / Escola</option>
+<option value="prefeitura">Prefeitura / Praça Pública</option>
+<option value="residencia">Residência Privada</option>
+</select>
+</div>
+<button class="mt-2 w-full h-12 rounded-lg bg-surface-container-lowest text-primary font-label-caps text-label-caps uppercase flex items-center justify-center gap-2 shadow-lg transition-all active:scale-[0.98]" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Receber Orçamento Detalhado</span>
+</button>
+<div class="hidden p-3 rounded-lg bg-energy-green-light text-tertiary font-body-sm text-body-sm text-center font-bold" id="formSuccess">
+          Solicitação enviada com sucesso! Nosso especialista esportivo entrará em contato em minutos.
+        </div>
+</form>
+<!-- Botão Direto WhatsApp Especialista -->
+<div class="pt-2 flex flex-col gap-2 relative z-10">
+<div class="flex items-center gap-2">
+<div class="h-px bg-white/20 flex-grow"></div>
+<span class="font-label-caps text-label-caps text-white/60 uppercase text-[10px]">Ou tire dúvidas ao vivo</span>
+<div class="h-px bg-white/20 flex-grow"></div>
+</div>
+<a class="w-full h-12 rounded-lg bg-tertiary-container text-on-tertiary font-label-caps text-label-caps uppercase flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98]" href="https://wa.me/554861365993?text=Ol%C3%A1%20Altipisos%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20quadra%20esportiva.">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Fale Agora no WhatsApp (+55 48 6136-5993)</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive Script for Form Micro-interaction -->
+<script>
+    function showSuccessFeedback() {
+      const successBox = document.getElementById('formSuccess');
+      if (successBox) {
+        successBox.classList.remove('hidden');
+        setTimeout(() => {
+          successBox.classList.add('hidden');
+        }, 6000);
+      }
+    }
+  </script>
+</div><footer class="w-full bg-surface-container-low mt-space-2xl px-space-md pt-space-xl pb-space-xl flex flex-col gap-space-lg"><div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary font-bold">Altipisos Pisos Modulares</span><p class="font-body-sm text-body-sm text-on-surface-variant">Engenharia esportiva de alta performance, absorção de impacto certificada e garantia de 10 anos.</p></div><div class="grid grid-cols-2 gap-space-md font-body-sm text-body-sm"><div class="flex flex-col gap-space-xs"><span class="font-label-spec text-label-spec text-on-surface uppercase">Produtos</span><a class="text-on-surface-variant hover:text-primary" href="#">Futsal Profissional</a><a class="text-on-surface-variant hover:text-primary" href="#">Basquete 3x3</a><a class="text-on-surface-variant hover:text-primary" href="#">Poliesportiva</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-spec text-label-spec text-on-surface uppercase">Contato</span><a class="text-on-surface-variant hover:text-primary" href="#">WhatsApp Especialista</a><a class="text-on-surface-variant hover:text-primary" href="#">Solicitar Orçamento</a><a class="text-on-surface-variant hover:text-primary" href="#">Ficha Técnica</a></div></div><div class="pt-space-md flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-xs text-tertiary font-label-caps text-label-caps"><span class="material-symbols-outlined text-[16px]">verified</span>Certificado CBB, FPFS e LPF</div><p class="text-[12px] leading-4 text-outline">© 2025 Altipisos do Brasil Ltda. Todos os direitos reservados.</p></div></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant transition-colors" data-path="inicio" href="#"><span class="material-symbols-outlined">home</span><span class="font-label-caps text-label-caps">Início</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant transition-colors" data-path="pisos-esportivos" href="#"><span class="material-symbols-outlined">sports_handball</span><span class="font-label-caps text-label-caps">Pisos</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant transition-colors" data-path="simulador-de-quadra" href="#"><span class="material-symbols-outlined">grid_view</span><span class="font-label-caps text-label-caps">Simulador</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant transition-colors" data-path="orcamento-rapido" href="#"><span class="material-symbols-outlined">request_quote</span><span class="font-label-caps text-label-caps">Orçar</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant transition-colors" data-path="central-de-atendimento" href="#"><span class="material-symbols-outlined">headset_mic</span><span class="font-label-caps text-label-caps">Contato</span></a></div></nav></body></html>

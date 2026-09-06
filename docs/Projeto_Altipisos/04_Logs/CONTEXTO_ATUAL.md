@@ -7,70 +7,59 @@
 ## 📌 1. Contexto Geral do Projeto e Objetivos
 A Altipisos é a principal fabricante brasileira de pisos modulares esportivos em polipropileno virgem (+27 anos de mercado, +2.500 quadras instaladas, +1.000.000 m² de piso e embaixadores como Falcão e Amandinha). 
 
-**Missão Técnica Cumprida nas Etapas 1 a 4:**
-1. **Unificação Headless Total:** Criado o ecossistema Next.js 14+ App Router sob o domínio principal, integrando o catálogo institucional e os produtos da loja Nuvemshop (`/loja`), unificando design, autoridade e SEO.
-2. **Engenharia de Conversão (CRO de Alta Precisão):** Substituídos os formulários genéricos pelo componente interativo `QuickQuoteCalculator` (cálculo de placas, rampas, frete e investimento em tempo real com valor antes do compromisso) e pelo `CourtSimulator3D` (renderização WebGL via Three.js e React Three Fiber com demarcações oficiais).
-3. **Automação Backoffice & Estancamento de Reputação no Mercado Livre:** Criado o pipeline Event-Driven (`/api/webhooks/meli` -> `TinyErpService` -> SEFAZ -> `MercadoLivreService`), faturando e liberando etiquetas do Mercado Envios em tempo sub-90 segundos (teste de homologação aprovado em 402ms), eliminando a causa raiz da reputação vermelha.
+**Missão Técnica Cumprida:**
+1. **Source Control Unificado:** Repositórios Git aninhados foram eliminados. Raiz do projeto versionada de forma limpa e unificada (`git commit` inicial registrado).
+2. **Design B2B Flat & Header Original:** Eliminados os gradientes sintéticos. Implementada estética corporativa limpa (fundos sólidos branco, cinza claro e navy), logo oficial recuperada em `/images/logo.png`, e Header reconstruído com links centrais, dropdown de produtos (Sport In, Sport Out, Play Soft, Toy Floor), botão "SOLICITE ORÇAMENTO" e seletor de idioma.
+3. **Prova Social com Contadores Animados:** Componente `AnimatedMetrics.tsx` acionado via Intersection Observer com contadores numéricos dinâmicos (`react-countup`).
+4. **Calculadora CRO Híbrida B2B (Anti-Ancoragem Negativa):** 
+   - Exibe a faixa de referência "A partir de R$ 140/m²".
+   - Mantém abertos os dados técnicos úteis (área em m², total de placas e metros lineares de rampa).
+   - Bloqueia o valor monetário bruto sob um painel com efeito blur ("Gated Offer"), estimulando o lead a informar Nome e WhatsApp para receber o relatório financeiro com TCO e 15% de desconto de fábrica (CNPJ).
+5. **Automação Backoffice Fiscal:** Pipeline Event-Driven operando em 402ms no teste automatizado (Mercado Livre + Tiny ERP + SEFAZ), estancando a penalização de reputação.
 
 ---
 
 ## 🛠️ 2. Stack Tecnológica em Operação
 - **Core Framework:** Next.js 14.2.15 (App Router, Server Components & Route Handlers) rodando em Node.js v22.
 - **Linguagem & Tipagem:** TypeScript 5+ com validação Zod.
-- **Estilização & Design System:** Tailwind CSS configurado com os tokens extraídos do Stitch (`#1B6AE3` Primary Blue, `#0A212D` Deep Navy, `#10B981` Energy Green, `#F3F7FC` Ice Surface).
+- **Estilização:** Tailwind CSS v3 com design tokens sólidos da marca (#1B6AE3, #0A212D, #10B981, #FBF9F8).
+- **Animações Numéricas:** `react-countup` integrado com Intersection Observer nativo.
 - **Simulador 3D WebGL:** React Three Fiber (`@react-three/fiber`), Drei (`@react-three/drei`) e Three.js.
-- **Motor de Regras Financeiras & Logísticas:** `src/lib/pricing-engine.ts` (100% tipado e desacoplado).
-- **Pipeline Fiscal:**
-  - `TinyErpService` (`src/services/tiny-erp.ts`): Criação de cliente, pedido, NFe e autorização SEFAZ.
-  - `MercadoLivreService` (`src/services/mercado-livre.ts`): Injeção de chave de 44 dígitos e XML em `/shipments/{id}/invoice_data`.
-  - Webhooks: `/api/webhooks/meli` e `/api/webhooks/nuvemshop`.
-  - Captura de Leads CRO: `/api/leads`.
+- **Engine de Precificação & Frete:** `src/lib/pricing-engine.ts`.
+- **Serviços Fiscais e Webhooks:** `src/services/tiny-erp.ts`, `src/services/mercado-livre.ts`, `/api/webhooks/meli`, `/api/webhooks/nuvemshop`, `/api/leads`.
 
 ---
 
-## 📐 3. Regras de Negócio Consolidadas (Engenharia Reversa)
-1. **Origem Logística:** Fábrica matriz em Palhoça/SC (Rua das Azaléias, 212 - CEP 88133-310).
-2. **Preço Base por m²:**
-   - Sport Out (Outdoor drenante vazado): $R\$ 140,00 / m^2$
-   - Sport In (Indoor fechado liso/antiderrapante): $R\$ 150,00 / m^2$
-   - Play Soft (Playground infantil amortecedor): $R\$ 165,00 / m^2$
-3. **Mecânica Modular e Consumo de Placas:**
-   - Dimensão padrão: $25 \times 25\text{ cm}$ $\rightarrow$ $16\text{ placas por } m^2$.
-   - Rampas perimetrais: $4\text{ peças por metro linear}$ do perímetro exposto ($2 \times (\text{Largura} + \text{Comprimento})$).
-   - Cantoneiras: 4 peças de canto.
-4. **Algoritmo de Frete Rodoviário por km:**
-   - $\le 1.000\text{ km}$: $\text{Distância} \times R\$ 2,80$
-   - $> 1.000\text{ km}$: $\frac{\text{Distância} \times R\$ 3,50}{2} = \text{Distância} \times R\$ 1,75$
-   - Piso de frete mínimo: $R\$ 150,00$.
-5. **Condições Comerciais B2B:**
-   - 15% de desconto para faturamento direto com CNPJ à vista.
-   - Parcelamento em até 12x no cartão de crédito.
+## 📐 3. Regras de Negócio e Estratégia CRO B2B
+1. **Quantitativo de Materiais:**
+   - 16 placas de $25 \times 25\text{ cm}$ por m².
+   - 4 peças de rampa por metro linear do perímetro exposto ($2 \times (L + C)$).
+   - 4 cantoneiras de acabamento.
+2. **Estratégia Híbrida de Preço:**
+   - Exibição de âncora inicial: "A partir de R$ 140/m²".
+   - Bloqueio de TCO completo para evitar cotação fria/comparação predatória.
+   - Conexão direta com o WhatsApp comercial da fábrica em Palhoça/SC via mensagem pré-formatada.
+3. **Logística e Frete de Fábrica:**
+   - R$ 2,80/km para rotas $\le 1.000\text{ km}$.
+   - R$ 1,75/km para rotas $> 1.000\text{ km}$.
 
 ---
 
-## 🚀 4. Status de Entrega das Funcionalidades
-- [x] **STEP 1: Extração de UI/UX e Design System:** Todas as 14 telas, especificações de design e assets baixados via `curl` na pasta `design_system/`.
-- [x] **STEP 2: Engenharia Reversa do Legado:** Fórmulas de frete, precificação por m², rendimento de peças e regras de instalação extraídas e consolidadas.
-- [x] **Docs as Code Base:** Diretórios `.agents/` e `docs/Projeto_Altipisos/` totalmente criados e ativos.
-- [x] **STEP 3: Automação do Backoffice (Pipeline Fiscal Meli + Tiny):** Desenvolvido e validado com sucesso com execução em 402ms.
-- [x] **STEP 4: Front-end Headless & Componentização:**
-  - Boilerplate Next.js 14 configurado com Tailwind e tokens oficiais.
-  - Calculadora CRO `QuickQuoteCalculator.tsx` com value-before-commitment e lead scoring.
-  - Simulador 3D `CourtSimulator3D.tsx` com WebGL e marcações esportivas regulamentares.
-  - Storefront headless `/loja` integrado ao mesmo domínio.
+## 🚀 4. Status de Entrega das Tarefas
+- [x] **TASK 1: Correção do Source Control:** Pastas `.git` aninhadas excluídas; repositório único inicializado na raiz; `.gitignore` configurado; commit inicial realizado.
+- [x] **TASK 2: Arquivo de Migração de Conteúdo:** Criado `docs/Projeto_Altipisos/CONTENT_MIGRATION.md` com seções e blocos de comentários preparados.
+- [x] **TASK 3: Limpeza de UI/UX e Header Original:** Layout Flat limpo sem gradientes sintéticos; logo oficial Altipisos em `/images/logo.png`; Header fiel ao original com dropdown de produtos e botão azul de solicitação de orçamento.
+- [x] **TASK 4: Prova Social Animada:** Criado `AnimatedMetrics.tsx` com disparos automáticos via Intersection Observer.
+- [x] **TASK 5: Motor da Calculadora CRO (Híbrida B2B):** Implementado `QuickQuoteCalculator.tsx` com precificação ancorada, quantitativo aberto e painel financeiro desbloqueável por lead.
 
 ---
 
-## 📊 5. Gap Analysis (Legado vs Novo Ecossistema)
+## 📊 5. Gap Analysis Atualizado
 | Requisito / Dor | Como era no Sistema Antigo | Como é na Nova Arquitetura | Status |
 |---|---|---|---|
-| **Conversão de Leads** | Formulário genérico estático no rodapé sem estimativas | Calculadora CRO interativa com cálculo em tempo real de placas, rampas, frete e investimento | ✅ Concluído |
-| **Experiência Visual de Quadras** | Imagens estáticas e descrições técnicas | Simulador 3D WebGL (React Three Fiber) com linhas oficiais regulamentares | ✅ Concluído |
-| **Loja Virtual** | Subdomínio separado (`lojaaltipisos.com.br`) na Nuvemshop | Storefront Headless Next.js unificado no domínio principal (`/loja`) | ✅ Concluído |
-| **Faturamento Mercado Livre** | Processo manual com atrasos > 24h (reputação vermelha) | Pipeline orientado a eventos com emissão de NFe e envio do XML em < 90 segundos | ✅ Concluído |
-
----
-
-## 📝 6. Próximos Passos Imediatos
-1. Inserir chaves de produção das APIs no `.env.local`.
-2. Executar testes de integração com o ambiente de homologação da Nuvemshop e Mercado Livre.
+| **Controle de Versão** | Repositórios aninhados e corrompidos | Git unificado na raiz com `.gitignore` padronizado | ✅ Resolvido |
+| **Aparência do Front-end** | Gradientes pesados com visual sintético | Design Flat corporativo limpo, whitespace ampliado e logo oficial | ✅ Resolvido |
+| **Navegação & Header** | Header genérico com topbar redundante | Header fiel ao institucional original com dropdown e idioma | ✅ Resolvido |
+| **Métricas de Autoridade** | Números estáticos sem impacto | Contadores animados acionados por rolagem | ✅ Resolvido |
+| **Modelo Comercial B2B** | Formulário genérico ou preço aberto descontextualizado | Estratégia híbrida: quantitativo aberto + oferta travada no WhatsApp | ✅ Resolvido |
+| **Faturamento Mercado Livre** | Processo manual > 24h (reputação vermelha) | Pipeline orientado a eventos faturando em 402ms | ✅ Resolvido |

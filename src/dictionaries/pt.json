@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Quem Somos",
+    "products": "Produtos",
+    "content": "Conteúdos",
+    "blog": "Blog",
+    "contact": "Contato",
+    "store": "Loja",
+    "requestQuote": "Solicite Orçamento",
+    "sportIn": "Sport In (Indoor)",
+    "sportOut": "Sport Out (Outdoor)",
+    "playSoft": "Play Soft (Infantil)",
+    "toyFloor": "Toy Floor (Recreação)"
+  },
+  "hero": {
+    "badge": "Chancelas Oficiais: CBB • CBFS • LNF",
+    "title": "Transforme seu espaço com Altipisos, a inovação em pisos modulares!",
+    "subtitle": "Há mais de 27 anos, transformamos ambientes com pisos e equipamentos esportivos que unem qualidade, segurança, inovação e funcionalidade. Polipropileno 100% virgem com absorção de impacto superior a 35%.",
+    "ctaCalculate": "Calcular Meu Projeto",
+    "ctaSimulator": "Abrir Montador 3D"
+  },
+  "stats": {
+    "years": "Anos de Experiência",
+    "yearsSub": "Pioneirismo fabril no Brasil",
+    "clients": "Clientes Atendidos",
+    "clientsSub": "Clubes, escolas e condomínios",
+    "projects": "Projetos Realizados",
+    "projectsSub": "Quadras entregues no país",
+    "installed": "Instalados",
+    "installedSub": "Polipropileno 100% virgem"
+  },
+  "simulator": {
+    "tag": "Visualização Paramétrica Oficial",
+    "title": "Montador de Quadras 3D",
+    "desc": "Alterne as modalidades esportivas com demarcações regulamentares e personalize as cores das placas modulares em tempo real."
+  },
+  "calculator": {
+    "tag": "Engenharia Direto de Fábrica",
+    "title": "Calculadora Técnica de Materiais",
+    "desc": "Defina o tamanho do espaço para calcular a quantidade exata de placas modulares e rampas perimetrais com valor de fábrica.",
+    "fromPrice": "A partir de R$ 140/m²"
+  },
+  "about": {
+    "tag": "Sobre a Altipisos",
+    "title": "Segurança e Qualidade sob seus pés",
+    "desc": "Somos uma empresa com mais de 27 anos, líder brasileira em soluções de pisos modulares, elevando o padrão de quadras esportivas e áreas de lazer com inovação e qualidade superior.",
+    "directors": "Diretoria: Kean, Altivo e Kelton Possamai",
+    "mission": "Missão: Proporcionar segurança, conforto e satisfação através do comprometimento em levar a melhor experiência para nossos clientes.",
+    "vision": "Visão: Continuar sendo referência no Brasil e consolidar presença global.",
+    "values": "Valores: Eficácia, Inovação, Flexibilidade, Responsabilidade, Foco em Resultado, Lideração e Paixão pelo que fazemos."
+  },
+  "diff": {
+    "title": "Nossos Diferenciais",
+    "subtitle": "Oferecemos um atendimento ágil e humano, com compromisso ético e responsável em todas as etapas.",
+    "d1Title": "Tecnologia Modular de Alto Desempenho",
+    "d1Desc": "Pisos modulares desenvolvidos com polipropileno 100% virgem, tecnologia de absorção de impacto e soluções que entregam segurança e durabilidade.",
+    "d2Title": "Padrão Profissional para Quadras",
+    "d2Desc": "Equipamentos desenvolvidos para futsal, basquete, tênis, vôlei e pickleball, com estruturas robustas e desempenho para quadras profissionais.",
+    "d3Title": "Instalação em até 48 Horas",
+    "d3Desc": "Sem quebra-quebra, a quadra com piso modular fica pronta para uso em até 48 horas. Só precisa que a base esteja rígida e nivelada.",
+    "d4Title": "Equipamentos Esportivos de Alta Resistência",
+    "d4Desc": "Traves oficiais, tabelas de basquete em acrílico e postes esportivos fabricados com materiais de alta qualidade para maior durabilidade."
+  },
+  "ambassadors": {
+    "tag": "A Escolha dos Campeões",
+    "title": "Embaixadores Oficiais Altipisos",
+    "subtitle": "Nossos embaixadores são apaixonados por qualidade e inovação, representando a excelência da Altipisos nas maiores arenas do mundo.",
+    "falcaoRole": "Melhor Jogador de Futsal da História",
+    "falcaoQuote": "O bom é saber que as novas gerações poderão jogar em um piso de qualidade.",
+    "amandinhaRole": "8x Eleita a Melhor do Mundo no Futsal",
+    "amandinhaQuote": "A qualidade, segurança e tecnologia que a Altipisos proporciona é surreal, é sem dúvidas um prazer representar essa empresa gigante que é uma família para mim.",
+    "billyRole": "Futsal & Freestyle Star",
+    "billyQuote": "Eu me identifico muito com a empresa Altipisos, primeiro por ser uma verdadeira família. Além disso, eles têm a mesma paixão por esporte que eu.",
+    "adoniasRole": "Rei do Drible / Freestyle Mundial",
+    "adoniasQuote": "Todas as vezes que joguei na quadra Altipisos meu desempenho foi muito melhor. A qualidade do piso faz total diferença na performance e no resultado do jogo."
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "subtitle": "Tire suas dúvidas técnicas sobre o piso modular, instalação, manutenção e garantia de 10 anos."
+  },
+  "footer": {
+    "rights": "Altipisos - 2026 | Todos os direitos reservados",
+    "legal": "Altipisos Revestimentos e Quadras Esportivas LTDA - CNPJ 13.627.549/0001-52",
+    "address": "Rua Azaléia 212, Jardim Eldorado, Palhoça/SC - CEP 88133-310"
+  }
+}

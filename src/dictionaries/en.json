@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "content": "Content",
+    "blog": "Blog",
+    "contact": "Contact",
+    "store": "Shop",
+    "requestQuote": "Request Quote",
+    "sportIn": "Sport In (Indoor)",
+    "sportOut": "Sport Out (Outdoor)",
+    "playSoft": "Play Soft (Playground)",
+    "toyFloor": "Toy Floor (Educational)"
+  },
+  "hero": {
+    "badge": "Official Federation Certifications: CBB • CBFS • LNF",
+    "title": "Transform your space with Altipisos, the innovation in modular sports flooring!",
+    "subtitle": "For over 27 years, we transform environments with modular floors and sports equipment uniting safety, innovation, and durability. 100% virgin polypropylene with >35% shock absorption.",
+    "ctaCalculate": "Calculate My Project",
+    "ctaSimulator": "Open 3D Builder"
+  },
+  "stats": {
+    "years": "Years of Experience",
+    "yearsSub": "Manufacturing leadership in Brazil",
+    "clients": "Clients Served",
+    "clientsSub": "Clubs, schools, and communities",
+    "projects": "Completed Projects",
+    "projectsSub": "Sports courts delivered nationwide",
+    "installed": "Installed",
+    "installedSub": "100% virgin polypropylene"
+  },
+  "simulator": {
+    "tag": "Official Parametric Visualizer",
+    "title": "3D Modular Court Builder",
+    "desc": "Switch sports disciplines with official game lines and customize modular tile colors in real-time."
+  },
+  "calculator": {
+    "tag": "Direct Factory Engineering",
+    "title": "Technical Material Calculator",
+    "desc": "Specify court dimensions to calculate exact modular tiles and perimeter ramps with direct factory pricing.",
+    "fromPrice": "From $28/m² (R$ 140/m²)"
+  },
+  "about": {
+    "tag": "About Altipisos",
+    "title": "Safety and Quality Under Your Feet",
+    "desc": "With over 27 years of history, Altipisos is Brazil's leading manufacturer of modular sports flooring, elevating court standards with innovation and superior engineering.",
+    "directors": "Board of Directors: Kean, Altivo and Kelton Possamai",
+    "mission": "Mission: Provide safety, comfort, and satisfaction through our commitment to delivering the best athletic experience.",
+    "vision": "Vision: Remain the benchmark in Brazil and expand as a global industry player.",
+    "values": "Values: Efficiency, Innovation, Flexibility, Accountability, Leadership, and Passion for sports."
+  },
+  "diff": {
+    "title": "Our Key Differentiators",
+    "subtitle": "Agile, personalized customer support with ethical responsibility at every project milestone.",
+    "d1Title": "High-Performance Modular Tech",
+    "d1Desc": "Modular tiles manufactured with 100% virgin polypropylene, impact absorption systems, and multi-year durability.",
+    "d2Title": "Professional Federation Standard",
+    "d2Desc": "Equipment and flooring developed for futsal, basketball, tennis, volleyball, and pickleball with robust professional performance.",
+    "d3Title": "Installation within 48 Hours",
+    "d3Desc": "Zero demolition work. The modular court is ready for play within 48 hours over any clean, level subfloor.",
+    "d4Title": "Heavy-Duty Sports Equipment",
+    "d4Desc": "Official soccer/futsal goals, acrylic basketball backboards, and multi-sport net posts engineered for maximum durability."
+  },
+  "ambassadors": {
+    "tag": "The Champions' Choice",
+    "title": "Official Altipisos Ambassadors",
+    "subtitle": "Our world-class ambassadors represent passion, athletic performance, and trust in Altipisos technology.",
+    "falcaoRole": "Greatest Futsal Player of All Time",
+    "falcaoQuote": "It is great to know that future generations will play on a top-quality, joint-protecting sports floor.",
+    "amandinhaRole": "8x Consecutive World Best Futsal Player",
+    "amandinhaQuote": "The quality, safety, and technology Altipisos provides is surreal. It is an absolute honor to represent this giant company.",
+    "billyRole": "Futsal & Freestyle Star",
+    "billyQuote": "I deeply identify with Altipisos because it is a true family that shares the exact same passion for sports that I live by.",
+    "adoniasRole": "World Freestyle King / Dribble Master",
+    "adoniasQuote": "Every time I play on an Altipisos court, my ball control and agility are far superior. The floor quality makes all the difference."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get clear answers regarding modular flooring installation, subfloors, maintenance, and 10-year factory warranty."
+  },
+  "footer": {
+    "rights": "Altipisos - 2026 | All rights reserved",
+    "legal": "Altipisos Revestimentos e Quadras Esportivas LTDA - Tax ID 13.627.549/0001-52",
+    "address": "Rua Azaléia 212, Palhoça, SC, Brazil - ZIP 88133-310"
+  }
+}

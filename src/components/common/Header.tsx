@@ -3,31 +3,50 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useI18n, Locale } from "@/lib/i18n";
 import {
   Mail,
   Phone,
   ChevronDown,
   Menu,
   X,
+  Globe,
+  Check,
+  ShoppingBag,
 } from "lucide-react";
 
 export const Header: React.FC = () => {
+  const { locale, setLocale, t } = useI18n();
   const [productsOpen, setProductsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const LANGUAGES: Array<{ code: Locale; name: string; short: string }> = [
+    { code: "pt", name: "Português (BR)", short: "PT" },
+    { code: "en", name: "English (US)", short: "EN" },
+    { code: "es", name: "Español", short: "ES" },
+  ];
+
+  const currentLang = LANGUAGES.find((l) => l.code === locale) || LANGUAGES[0];
+
+  const handleSelectLang = (code: Locale) => {
+    setLocale(code);
+    setLangOpen(false);
+  };
 
   return (
     <>
-      {/* 1. TOPBAR ORIGINAL */}
-      <div className="bg-[#0A212D] text-gray-300 text-xs py-2 px-4 border-b border-white/10">
+      {/* 1. TOPBAR CORPORATIVA */}
+      <div className="bg-[#0A212D] text-gray-300 text-xs py-2.5 px-4 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
-          {/* Contato à Esquerda */}
-          <div className="flex items-center gap-5">
+          {/* Contato Comercial Matriz Palhoça */}
+          <div className="flex items-center gap-6">
             <a
-              href="mailto:a.tipisos@altipisos.com.br"
+              href="mailto:altipisos@altipisos.com.br"
               className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-altipisos-blue" />
-              <span>a.tipisos@altipisos.com.br</span>
+              <span>altipisos@altipisos.com.br</span>
             </a>
             <a
               href="https://wa.me/554861365993"
@@ -35,13 +54,13 @@ export const Header: React.FC = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-green-400" />
+              <Phone className="w-3.5 h-3.5 text-altipisos-green" />
               <span>(48) 6136-5993</span>
             </a>
           </div>
 
-          {/* Redes Sociais à Direita */}
-          <div className="hidden sm:flex items-center gap-4 text-gray-400 text-xs">
+          {/* Redes Sociais Institucionais */}
+          <div className="hidden sm:flex items-center gap-5 text-gray-400 text-xs">
             <span className="hover:text-white transition-colors cursor-pointer">Facebook</span>
             <span className="hover:text-white transition-colors cursor-pointer">Instagram</span>
             <span className="hover:text-white transition-colors cursor-pointer">LinkedIn</span>
@@ -52,14 +71,14 @@ export const Header: React.FC = () => {
       </div>
 
       {/* 2. HEADER PRINCIPAL */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Logo Oficial Altipisos */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-40 h-10">
+          <Link href="/" className="flex items-center">
+            <div className="relative w-44 h-11">
               <Image
                 src="/images/logo.png"
-                alt="Logo Altipisos"
+                alt="Logo Altipisos Pisos Modulares"
                 fill
                 className="object-contain object-left"
                 priority
@@ -68,12 +87,12 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Links Centrais de Navegação (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-700">
+          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-700">
             <Link href="/" className="hover:text-altipisos-blue transition-colors">
-              Home
+              {t("nav.home", "Home")}
             </Link>
             <Link href="/#quem-somos" className="hover:text-altipisos-blue transition-colors">
-              Quem Somos
+              {t("nav.about", "Quem Somos")}
             </Link>
 
             {/* Dropdown de Produtos */}
@@ -86,168 +105,213 @@ export const Header: React.FC = () => {
                 type="button"
                 className="flex items-center gap-1 hover:text-altipisos-blue transition-colors py-2"
               >
-                <span>Produtos</span>
-                <ChevronDown className="w-3.5 h-3.5" />
+                <span>{t("nav.products", "Produtos")}</span>
+                <ChevronDown className="w-3.5 h-3.5 opacity-70" />
               </button>
 
               {productsOpen && (
-                <div className="absolute top-full left-0 w-52 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50 animate-fade-in">
+                <div className="absolute top-full left-0 w-60 bg-white rounded-xl shadow-md border border-gray-200 py-2.5 z-50">
                   <Link
                     href="/#produtos"
-                    className="block px-4 py-2.5 text-xs text-gray-700 hover:bg-blue-50 hover:text-altipisos-blue font-medium"
+                    className="block px-4 py-2 text-xs text-gray-700 hover:bg-blue-50 hover:text-altipisos-blue font-medium transition-colors"
                   >
-                    Sport In (Indoor)
+                    {t("nav.sportIn", "Sport In (Indoor)")}
                   </Link>
                   <Link
                     href="/#produtos"
-                    className="block px-4 py-2.5 text-xs text-gray-700 hover:bg-blue-50 hover:text-altipisos-blue font-medium"
+                    className="block px-4 py-2 text-xs text-gray-700 hover:bg-blue-50 hover:text-altipisos-blue font-medium transition-colors"
                   >
-                    Sport Out (Outdoor)
+                    {t("nav.sportOut", "Sport Out (Outdoor)")}
                   </Link>
                   <Link
                     href="/#produtos"
-                    className="block px-4 py-2.5 text-xs text-gray-700 hover:bg-blue-50 hover:text-altipisos-blue font-medium"
+                    className="block px-4 py-2 text-xs text-gray-700 hover:bg-blue-50 hover:text-altipisos-blue font-medium transition-colors"
                   >
-                    Play Soft (Infantil)
+                    {t("nav.playSoft", "Play Soft (Infantil)")}
                   </Link>
                   <Link
                     href="/#produtos"
-                    className="block px-4 py-2.5 text-xs text-gray-700 hover:bg-blue-50 hover:text-altipisos-blue font-medium"
+                    className="block px-4 py-2 text-xs text-gray-700 hover:bg-blue-50 hover:text-altipisos-blue font-medium transition-colors"
                   >
-                    Toy Floor (Recreação)
+                    {t("nav.toyFloor", "Toy Floor (Recreação)")}
                   </Link>
                 </div>
               )}
             </div>
 
             <Link href="/#conteudos" className="hover:text-altipisos-blue transition-colors">
-              Conteúdos
+              {t("nav.content", "Conteúdos")}
             </Link>
             <Link href="/#blog" className="hover:text-altipisos-blue transition-colors">
-              Blog
+              {t("nav.blog", "Blog")}
             </Link>
             <Link href="/#contato" className="hover:text-altipisos-blue transition-colors">
-              Contato
+              {t("nav.contact", "Contato")}
             </Link>
             <Link
               href="/loja"
-              className="hover:text-altipisos-blue transition-colors font-semibold text-altipisos-blue"
+              className="hover:text-altipisos-blue transition-colors font-semibold text-altipisos-blue flex items-center gap-1.5"
             >
-              Loja
+              <ShoppingBag className="w-4 h-4" />
+              <span>{t("nav.store", "Loja")}</span>
             </Link>
           </nav>
 
-          {/* Lado Direito: CTA "SOLICITE ORÇAMENTO" e Seletor de Idioma */}
+          {/* Lado Direito: CTA "SOLICITE ORÇAMENTO" e Seletor de Idioma Profissional */}
           <div className="hidden sm:flex items-center gap-4">
             <a
               href="/#calculadora"
-              className="px-5 py-2.5 rounded-lg bg-altipisos-blue hover:bg-altipisos-blue-hover text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-sm"
+              className="px-6 py-2.5 rounded-lg bg-altipisos-blue hover:bg-altipisos-blue-hover text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-sm"
             >
-              Solicite Orçamento
+              {t("nav.requestQuote", "Solicite Orçamento")}
             </a>
 
-            {/* Seletor de Idioma */}
-            <div className="flex items-center gap-1 pl-2 border-l border-gray-200 text-xs font-medium text-gray-700 cursor-pointer">
-              <span className="text-base leading-none">🇧🇷</span>
-              <ChevronDown className="w-3 h-3 text-gray-400" />
+            {/* Seletor de Idioma com Ícone Lucide e Dropdown Semântico */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-gray-200 hover:border-gray-300 text-xs font-semibold text-gray-700 bg-gray-50 transition-colors"
+                title="Alterar Idioma"
+              >
+                <Globe className="w-3.5 h-3.5 text-gray-500" />
+                <span>{currentLang.short}</span>
+                <ChevronDown className="w-3 h-3 text-gray-400" />
+              </button>
+
+              {langOpen && (
+                <div className="absolute right-0 top-full mt-1.5 w-44 bg-white rounded-xl shadow-md border border-gray-200 py-1.5 z-50">
+                  {LANGUAGES.map((l) => (
+                    <button
+                      key={l.code}
+                      onClick={() => handleSelectLang(l.code)}
+                      className="w-full text-left px-3.5 py-2 text-xs flex items-center justify-between hover:bg-gray-50 transition-colors font-medium text-gray-700"
+                    >
+                      <span>{l.name}</span>
+                      {locale === l.code && <Check className="w-3.5 h-3.5 text-altipisos-blue" />}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
-          {/* Botão Mobile */}
+          {/* Botão Menu Mobile */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-600 hover:text-gray-900"
+            className="lg:hidden p-2 text-gray-600 hover:text-gray-900 rounded-lg border border-gray-200"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Menu Mobile */}
+        {/* Menu Mobile Expandido */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-3">
+          <div className="lg:hidden border-t border-gray-200 bg-white px-5 py-5 space-y-4">
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-gray-700 py-1.5"
+              className="block text-sm font-medium text-gray-700 py-1"
             >
-              Home
+              {t("nav.home", "Home")}
             </Link>
             <Link
               href="/#quem-somos"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-gray-700 py-1.5"
+              className="block text-sm font-medium text-gray-700 py-1"
             >
-              Quem Somos
+              {t("nav.about", "Quem Somos")}
             </Link>
-            <div className="pl-2 border-l-2 border-altipisos-blue space-y-1.5 py-1">
+            <div className="pl-3 border-l-2 border-altipisos-blue space-y-2 py-1">
               <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block">
-                Produtos
+                {t("nav.products", "Produtos")}
               </span>
               <Link
                 href="/#produtos"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-xs text-gray-600 py-1"
+                className="block text-xs text-gray-600 py-0.5"
               >
-                Sport In (Indoor)
+                {t("nav.sportIn", "Sport In (Indoor)")}
               </Link>
               <Link
                 href="/#produtos"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-xs text-gray-600 py-1"
+                className="block text-xs text-gray-600 py-0.5"
               >
-                Sport Out (Outdoor)
+                {t("nav.sportOut", "Sport Out (Outdoor)")}
               </Link>
               <Link
                 href="/#produtos"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-xs text-gray-600 py-1"
+                className="block text-xs text-gray-600 py-0.5"
               >
-                Play Soft (Infantil)
+                {t("nav.playSoft", "Play Soft (Infantil)")}
               </Link>
               <Link
                 href="/#produtos"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-xs text-gray-600 py-1"
+                className="block text-xs text-gray-600 py-0.5"
               >
-                Toy Floor (Recreação)
+                {t("nav.toyFloor", "Toy Floor (Recreação)")}
               </Link>
             </div>
             <Link
               href="/#conteudos"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-gray-700 py-1.5"
+              className="block text-sm font-medium text-gray-700 py-1"
             >
-              Conteúdos
+              {t("nav.content", "Conteúdos")}
             </Link>
             <Link
               href="/#blog"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-gray-700 py-1.5"
+              className="block text-sm font-medium text-gray-700 py-1"
             >
-              Blog
+              {t("nav.blog", "Blog")}
             </Link>
             <Link
               href="/#contato"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-gray-700 py-1.5"
+              className="block text-sm font-medium text-gray-700 py-1"
             >
-              Contato
+              {t("nav.contact", "Contato")}
             </Link>
             <Link
               href="/loja"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-bold text-altipisos-blue py-1.5"
+              className="block text-sm font-bold text-altipisos-blue py-1"
             >
-              Loja Virtual
+              {t("nav.store", "Loja")}
             </Link>
+
+            {/* Seletor de Idioma Mobile */}
+            <div className="pt-2 flex items-center gap-2 border-t border-gray-100">
+              <Globe className="w-4 h-4 text-gray-400" />
+              <div className="flex gap-2">
+                {LANGUAGES.map((l) => (
+                  <button
+                    key={l.code}
+                    onClick={() => handleSelectLang(l.code)}
+                    className={`px-2.5 py-1 rounded text-xs font-semibold ${
+                      locale === l.code
+                        ? "bg-altipisos-blue text-white"
+                        : "bg-gray-100 text-gray-600"
+                    }`}
+                  >
+                    {l.short}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className="pt-2">
               <a
                 href="/#calculadora"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-center w-full py-2.5 bg-altipisos-blue text-white text-xs font-bold uppercase rounded-lg"
+                className="block text-center w-full py-3 bg-altipisos-blue text-white text-xs font-bold uppercase rounded-xl shadow-sm"
               >
-                Solicite Orçamento
+                {t("nav.requestQuote", "Solicite Orçamento")}
               </a>
             </div>
           </div>
